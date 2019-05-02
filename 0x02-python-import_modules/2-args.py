@@ -4,7 +4,7 @@ if __name__ == "__main__":
     arguments = len(argv) - 1
     i = 1
     if arguments is 0:
-        print("{:d} argument.".format(arguments))
+        print("{:d} arguments.".format(arguments))
     elif arguments is 1:
         print("{:d} argument:".format(arguments))
     else:
