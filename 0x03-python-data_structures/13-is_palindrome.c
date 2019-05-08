@@ -40,17 +40,7 @@ int is_palindrome(listint_t **head)
 			slow = slow->next;
 			fast = fast->next->next;
 		}
-		/**
-		 * printf("slow->n is %d\n", slow->n);
-		 * printf("slow->n is %d\n", slow->next->n);
-		*/
 		rev = reverse_listint(&slow);
-		/**
-		 *
-		 * print_listint(rev);
-		 * printf("###############\n");
-		 * print_listint(*head);
-		*/
 		while (cur && rev)
 		{
 			if (cur->n != rev->n)
