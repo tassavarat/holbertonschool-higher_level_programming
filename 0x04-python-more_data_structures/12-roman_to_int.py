@@ -20,7 +20,7 @@ def roman(r):
 def roman_to_int(roman_string):
     i = 0
     d = 0
-    while i < len(roman_string):
+    while i < len(roman_string) and isinstance(roman_string, str):
         s1 = roman(roman_string[i])
         if i + 1 < len(roman_string):
             s2 = roman(roman_string[i + 1])
