@@ -14,6 +14,7 @@ def roman(r):
         return 500
     if r == 'M':
         return 1000
+    return 0
 
 
 def roman_to_int(roman_string):
