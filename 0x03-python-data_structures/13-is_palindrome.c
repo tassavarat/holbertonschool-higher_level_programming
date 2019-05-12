@@ -40,7 +40,7 @@ int is_palindrome(listint_t **head)
 			slow = slow->next;
 			fast = fast->next->next;
 		}
-		rev = reverse_listint(&slow);
+		rev = slow = reverse_listint(&slow);
 		while (rev)
 		{
 			if (cur->n != rev->n)
@@ -48,6 +48,7 @@ int is_palindrome(listint_t **head)
 			cur = cur->next;
 			rev = rev->next;
 		}
+	reverse_listint(&slow);
 	}
 	return (1);
 }
