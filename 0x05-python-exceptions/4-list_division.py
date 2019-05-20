@@ -11,7 +11,7 @@ def list_division(my_list_1, my_list_2, list_length):
             print("division by 0")
             tmp = 0
         except IndexError:
-            print("out or range")
+            print("out of range")
             tmp = 0
         finally:
             result.append(tmp)
