@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 class Square:
-    """A square"""
+    """Defines a square"""
     __size = None
 
     def __init__(self, size):
