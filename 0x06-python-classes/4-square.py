@@ -3,7 +3,7 @@ class Square:
     """Defines a square"""
     def __init__(self, size=0):
         """Initialises the data"""
-        self.__size = size
+        self.size = size
 
     def area(self):
         """Returns current square area"""
