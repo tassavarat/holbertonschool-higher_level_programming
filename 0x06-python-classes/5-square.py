@@ -24,6 +24,7 @@ class Square:
             raise ValueError("size must be >= 0")
 
     def my_print(self):
+        """Prints the square"""
         for i in range(self.__size):
             for j in range(self.__size):
                 print('#', end='')
