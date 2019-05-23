@@ -38,14 +38,14 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         new = Node(value)
         tmp = self.__head
-        add_start = 0   # flag
+        add_start = False
 
         if not self.__head:
             self.__head = new
             new.next_node = None
         else:
             if value < self.__head.data:
-                add_start = 1  # flag
+                add_start = True
             while tmp.next_node and value > tmp.next_node.data\
                     and not add_start:
                 tmp = tmp.next_node
