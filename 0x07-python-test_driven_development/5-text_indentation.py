@@ -13,3 +13,5 @@ def text_indentation(text):
             print()
             s = ""
     print(s.strip(), end='')
+    if text is "\n":
+        print()
