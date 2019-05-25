@@ -94,3 +94,11 @@ No div passed:
 	>>> matrix_divided(matrix, None)
 	Traceback (most recent call last):	
 	TypeError: div must be a number
+
+Inf as div passed:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, float("inf"))
+    	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
