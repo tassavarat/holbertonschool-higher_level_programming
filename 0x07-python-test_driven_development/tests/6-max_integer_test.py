@@ -12,6 +12,12 @@ class TestMaxInteger(unittest.TestCase):
     def test_string(self):
         self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
 
+    def test_beginning(self):
+        self.assertEqual(max_integer([4, 2, 3]), 4)
+
+    def test_mid(self):
+        self.assertEqual(max_integer([1, 4, 3]), 4)
+
     def test_diff_types(self):
         with self.assertRaises(TypeError):
             max_integer([1, 2, 'c'])
@@ -25,5 +31,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_inf(self):
         self.assertEqual(max_integer([1, float("inf")]), float("inf"))
+
+    def test_single_element(self):
+        self.assertEqual(max_integer([4]), 4)
 if __name__ == '__main__':
     unittest.main()
