@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
-    """Divides all elements of a matrix"""
+    """Divides all elements of a matrix
+    """
     if matrix:
         for i in matrix:
             if any(type(j) is not int and type(j) is not float for j in i)\

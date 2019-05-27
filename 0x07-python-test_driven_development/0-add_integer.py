@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
-    """Adds two integers"""
+    """Adds two integers
+    """
     if type(a) is float:
         a = int(a)
     elif type(a) is not int:
