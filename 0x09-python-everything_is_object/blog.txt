@@ -1,6 +1,0 @@
-* introduction
-* id and type
-* mutable objects
-* immutable objects
-* why does it matter and how differently does Python treat mutable and immutable objects
-* how arguments are passed to functions and what does that imply for mutable and immutable objects
