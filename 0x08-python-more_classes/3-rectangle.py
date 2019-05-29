@@ -53,6 +53,8 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """Creates a new string object from the given object
+        """
         s = ''
         if self.__width > 0 and self.__height > 0:
             for _ in range(self.__height):
