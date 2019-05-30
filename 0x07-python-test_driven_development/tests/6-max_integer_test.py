@@ -34,5 +34,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_single_element(self):
         self.assertEqual(max_integer([4]), 4)
+
+
 if __name__ == '__main__':
     unittest.main()
