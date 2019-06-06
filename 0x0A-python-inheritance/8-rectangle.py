@@ -19,8 +19,6 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     """Rectangle class
     """
-    pass
-
     def __init__(self, width, height):
         """Instantiation
         """
