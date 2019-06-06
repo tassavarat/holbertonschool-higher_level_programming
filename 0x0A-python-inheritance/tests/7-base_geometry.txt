@@ -1,0 +1,67 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``integer_validator``
+---------------------
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+
+value as string:
+    	>>> bg.integer_validator("name", "John")
+    	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+0 or negative:
+	>>> bg.integer_validator("age", 0)
+    	Traceback (most recent call last):
+    	ValueError: age must be greater than 0
+
+value as float:
+	>>> bg.integer_validator("age", 2.0)
+    	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+Name error:
+	>>> bg.integer_validator("age", b)
+    	Traceback (most recent call last):
+    	NameError: name 'b' is not defined
+
+Infinity:
+	>>> bg.integer_validator("age", float("inf"))
+    	Traceback (most recent call last):
+    	TypeError: age must be an integer
+
+NaN:
+	>>> bg.integer_validator("age", float("nan"))
+    	Traceback (most recent call last):
+    	TypeError: age must be an integer
+
+None:
+    	>>> bg.integer_validator("name", None)
+    	Traceback (most recent call last):
+    	TypeError: name must be an integer
+
+Single argument:
+    	>>> bg.integer_validator("name", )
+    	Traceback (most recent call last):
+    	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+No parameter:
+    	>>> bg.integer_validator()
+    	Traceback (most recent call last):
+    	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Name as empty string:
+    	>>> bg.integer_validator("", 21)
+
+Name as int:
+    	>>> bg.integer_validator(21, 42)
+
+Three parameters:
+    	>>> bg.integer_validator("name", 42, yh,0hli,9li4,ch4li4,)
+	Traceback (most recent call last):
+    	SyntaxError: invalid syntax
