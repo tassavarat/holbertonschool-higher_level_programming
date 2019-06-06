@@ -46,6 +46,7 @@ class Square(Rectangle):
         """
         self.__size = size
         BaseGeometry.integer_validator(self, "size", size)
+        super().__init__(size, size)
 
     def area(self):
         """Returns area
