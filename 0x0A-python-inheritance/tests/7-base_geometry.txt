@@ -65,3 +65,28 @@ Three parameters:
     	>>> bg.integer_validator("name", 42, yh,0hli,9li4,ch4li4,)
 	Traceback (most recent call last):
     	SyntaxError: invalid syntax
+
+value as tuple:
+    	>>> bg.integer_validator("name", (4,))
+    	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+value as list:
+    	>>> bg.integer_validator("name", [3])
+    	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+value as bool:
+    	>>> bg.integer_validator("name", True)
+    	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+value as set:
+    	>>> bg.integer_validator("name", {3, 4})
+    	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+area:
+	>>> area()
+    	Traceback (most recent call last):
+    	NameError: name 'area' is not defined
