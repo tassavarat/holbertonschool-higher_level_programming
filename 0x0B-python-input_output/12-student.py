@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""12-student method
+"""12-student module
 """
 
 
