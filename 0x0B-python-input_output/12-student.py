@@ -22,4 +22,5 @@ class Student:
                 if i in self.__dict__:
                     my_dict[i] = self.__dict__[i]
             return my_dict
-        return self.__dict__
+        else:
+            return self.__dict__
