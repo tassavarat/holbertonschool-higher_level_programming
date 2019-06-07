@@ -87,6 +87,6 @@ value as set:
 	TypeError: name must be an integer
 
 area:
-	>>> area()
+	>>> bg.area()
     	Traceback (most recent call last):
-    	NameError: name 'area' is not defined
+    	Exception: area() is not implemented
