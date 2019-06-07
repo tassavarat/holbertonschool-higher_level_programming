@@ -18,9 +18,8 @@ class Student:
         """
         if attrs:
             my_dict = {}
-            for i in attrs:
-                if i in self.__dict__:
+            for i in self.__dict__:
+                if i in attrs:
                     my_dict[i] = self.__dict__[i]
             return my_dict
-        else:
-            return self.__dict__
+        return self.__dict__
