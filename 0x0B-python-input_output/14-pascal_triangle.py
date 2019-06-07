@@ -13,13 +13,13 @@ def factorial(n):
 
 
 def pascal_triangle(n):
-    """Returns a list of lists of integers representing the Pascal's triangle
+    """Returns a list of lists of integers reptriangleenting the Pascal's triangle
     of n
     """
-    res = []
+    triangle = []
     for i in range(n):
         row = []
         for j in range(i + 1):
             row.append(factorial(i) // (factorial(j) * factorial(i - j)))
-        res.append(row)
-    return res
+        triangle.append(row)
+    return triangle
