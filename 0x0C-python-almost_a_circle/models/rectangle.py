@@ -10,14 +10,15 @@ class Rectangle(Base):
         Args:
             width (int): Dimension of Rectangle
             height (int): Dimension of Rectangle
-            x (int): Dimension of Rectangle
-            y (int): Dimension of Rectangle
+            x (int): Horizontal offset
+            y (int): Vertical offset
+            id (int): id attribute
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -70,3 +71,59 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Returns: Area value of Rectangle instance"""
+        return self.__width * self.__height
+
+    def display(self):
+        """Prints the Rectangle instance with the character #
+        offset by specified amount
+        """
+        for _ in range(self.__y):
+            print()
+        for _ in range(self.__height):
+            for _ in range(self.__x):
+                print(' ', end='')
+            for _ in range(self.__width):
+                print('#', end='')
+            print()
+
+    def __str__(self):
+        """Creates a new string object from the given object
+        Returns: [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute"""
+        if args:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                return
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """Returns: Dictionary representation of Rectangle"""
+        my_dict = {}
+
+        for k, v in self.__dict__.items():
+            keys = k.split("__")[-1]
+            my_dict[keys] = v
+        return my_dict
