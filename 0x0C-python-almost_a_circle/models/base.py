@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-base module
-"""
+"""base module"""
 import json
 from os import path
 
