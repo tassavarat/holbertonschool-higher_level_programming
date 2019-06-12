@@ -37,7 +37,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns: Instance with all attributes already set"""
-        r = cls(1, 1)
+        if type(cls) is Rectangle:
+            r = cls(1, 1)
+        else:
+            r = cls(1)
         r.update(**dictionary)
         return r
 
