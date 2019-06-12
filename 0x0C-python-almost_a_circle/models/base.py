@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base"""
 import json
+from os import path
 
 
 class Base:
@@ -46,10 +47,11 @@ class Base:
         filename = cls.__name__ + ".json"
         my_list = []
 
-        with open(filename) as f:
-            list_output = cls.from_json_string(f.read())
-        for e in list_output:
-            my_list.append(cls.create(**e))
+        if path.isfile(filename):
+            with open(filename) as f:
+                list_output = cls.from_json_string(f.read())
+            for e in list_output:
+                my_list.append(cls.create(**e))
         return my_list
 
     @staticmethod

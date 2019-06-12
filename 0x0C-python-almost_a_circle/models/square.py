@@ -38,8 +38,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
-        array = []
-
         if args:
             attrs = ["id", "size", "x", "y"]
             for i, e in enumerate(args):
