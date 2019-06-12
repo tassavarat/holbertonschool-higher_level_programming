@@ -37,7 +37,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns: Instance with all attributes already set"""
-        if cls is Rectangle:
+        if cls.__name__ == "Rectangle":
             r = cls(1, 1)
         else:
             r = cls(1)
