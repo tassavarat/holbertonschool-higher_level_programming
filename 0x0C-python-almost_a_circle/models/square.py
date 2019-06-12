@@ -43,10 +43,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Returns: Dictionary representation of Square"""
-        my_dict = {}
-
-        for k, v in self.__dict__.items():
-            keys = k.split("__")[-1]
-            if "width" not in keys and "height" not in keys:
-                my_dict[keys] = v
+        my_dict = super().to_dictionary()
+        my_dict["size"] = my_dict["width"]
+        del my_dict["width"], my_dict["height"]
         return my_dict
