@@ -16,7 +16,7 @@ class Base:
         Args:
             id (int): id attribute
         """
-        if id is not None:
+        if id:
             self.id = id
         else:
             self.__nb_objects += 1
