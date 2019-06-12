@@ -159,12 +159,6 @@ class TestBase(unittest.TestCase):
         sys.stdout = sys.__stdout__
         assert output.getvalue() == "[Rectangle] (1) 1/3 - 4/2\n"
 
-    def test_kwargs_extra_keys(self):
-        """Test kwargs normal behavior"""
-        r1 = Rectangle(10, 10, 10, 10)
-        with self.assertRaises(SyntaxError):
-            r1.update(width=)
-
 
 if __name__ == '__main__':
     unittest.main()
