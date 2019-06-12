@@ -7,9 +7,8 @@ from models.rectangle import Rectangle
 from io import StringIO
 
 
-class TestBase(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
     """Rectangle class test"""
-
     def setUp(self):
         """Resets nb_objects"""
         Base._Base__nb_objects = 0
