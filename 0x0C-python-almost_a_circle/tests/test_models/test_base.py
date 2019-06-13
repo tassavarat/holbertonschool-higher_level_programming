@@ -14,6 +14,11 @@ class TestBase(unittest.TestCase):
         """Resets nb_objects"""
         Base._Base__nb_objects = 0
 
+    def test_type(self):
+        """Testing for instance type"""
+        b = Base()
+        self.assertTrue(type(b) == Base)
+
     def test_id(self):
         """Prints out the id"""
         b1 = Base()
@@ -68,6 +73,16 @@ class TestBase(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(len(json_dictionary), len(str([{
             "x": 2, "width": 10, "id": 6, "height": 7, "y": 8}])))
+        self.assertTrue(type(json_dictionary), dict)
+
+    def test_to_json_string_len_square(self):
+        """Testing to_json_string len"""
+        r1 = Square(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(len(json_dictionary), len(str([{
+            "x": 7, "size": 10, "id": 8, "y": 2}])))
+        self.assertTrue(type(json_dictionary), dict)
 
     def test_to_json_string_type(self):
         """Testing to_json_string type"""
@@ -98,6 +113,18 @@ class TestBase(unittest.TestCase):
                             "x": 0, "id": 7, "width": 2, "y": 0, "height": 4}]
                         )))
 
+    def test_save_to_file_len_Square(self):
+        """Testing JSON string rep len"""
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4)
+        Square.save_to_file([r1, r2])
+        with open("Square.json") as file:
+            self.assertEqual(
+                    len(file.read()), len(str(
+                        [{"x": 7, "id": 8, "size": 10, "y": 2}, {
+                            "x": 4, "id": 7, "size": 2, "y": 0}]
+                        )))
+
     def test_save_to_file_None(self):
         """Testing JSON string rep len"""
         Rectangle.save_to_file(None)
@@ -115,6 +142,20 @@ class TestBase(unittest.TestCase):
         self.assertEqual(list_output, [{
             'id': 89, 'width': 10, 'height': 4}, {
                 'id': 7, 'width': 1, 'height': 7}])
+        self.assertTrue(type(list_output), list)
+
+    def test_from_json_string_rec(self):
+        """Testing JSON string rep"""
+        list_input = [
+            {'id': 89, 'size': 10},
+            {'id': 7, 'size': 1}
+        ]
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        self.assertEqual(list_output, [{
+            'id': 89, 'size': 10}, {
+                'id': 7, 'size': 1}])
+        self.assertTrue(type(list_output), list)
 
     def test_from_json_string_None(self):
         """Testing JSON string rep with None param"""
@@ -136,6 +177,16 @@ class TestBase(unittest.TestCase):
         list_output = Rectangle.from_json_string('')
         self.assertEqual(list_output, [])
 
+    def test_from_json_string_empty(self):
+        """Testing JSON string rep with None param"""
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string('')
+        self.assertTrue(type(list_output), list)
+
     def test_create(self):
         """Testing instance with set attributes"""
         output = StringIO()
@@ -146,6 +197,17 @@ class TestBase(unittest.TestCase):
         print(r1)
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Rectangle] (1) 1/0 - 3/5\n")
+        self.assertTrue(type(r1) == Rectangle)
+
+        output = StringIO()
+        sys.stdout = output
+        r1 = Square(3)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Square.create(**r1_dictionary)
+        print(r1)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "[Square] (3) 0/0 - 3\n")
+        self.assertTrue(type(r1) == Square)
 
     def test_create2(self):
         """Testing instance with set attributes 2"""
@@ -213,6 +275,7 @@ class TestBase(unittest.TestCase):
         print(list_rectangles_output[1])
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Rectangle] (2) 0/0 - 2/4\n")
+        self.assertTrue(type(list_rectangles_output), list)
 
         output = StringIO()
         sys.stdout = output
@@ -231,6 +294,7 @@ class TestBase(unittest.TestCase):
         print(list_squares_output[1])
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Square] (6) 9/1 - 7\n")
+        self.assertTrue(type(list_squares_output), list)
 
 
 if __name__ == '__main__':

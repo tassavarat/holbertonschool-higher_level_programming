@@ -23,6 +23,7 @@ class TestRectangle(unittest.TestCase):
 
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+        self.assertTrue(type(r3), Rectangle)
 
     def test_one_param(self):
         """Passing one parameter"""
@@ -72,6 +73,11 @@ class TestRectangle(unittest.TestCase):
         """None parameter"""
         with self.assertRaises(TypeError):
             r1 = Rectangle(1, 2, None, 1, 1)
+
+    def test_neg(self):
+        """Neg parameter"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-1, 2, 1, 1)
 
     def test_area(self):
         """Prints out area"""

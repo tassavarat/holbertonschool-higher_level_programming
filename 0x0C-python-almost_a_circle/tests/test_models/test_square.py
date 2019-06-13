@@ -24,10 +24,16 @@ class TestSquare(unittest.TestCase):
 
         r3 = Square(10, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+        self.assertTrue(type(r3), Square)
 
     def test_all_param(self):
         """Passing all parameters"""
         r1 = Square(1, 1, 1, 1)
+
+    def test_all_neg(self):
+        """Passing all neg"""
+        with self.assertRaises(ValueError):
+            r1 = Square(1, -1, 1, 1)
 
     def test_string(self):
         """Passing string"""
@@ -72,6 +78,7 @@ class TestSquare(unittest.TestCase):
     def test_area(self):
         """Prints out area"""
         r1 = Square(10)
+        self.assertTrue(type(r1), Square)
 
     def test_display(self):
         """Tests rectangle output"""
@@ -158,6 +165,7 @@ class TestSquare(unittest.TestCase):
         s1 = Square(10, 2, 1)
         s1_dictionary = s1.to_dictionary()
         self.assertEqual(s1_dictionary, {'id': 1, 'x': 2, 'size': 10, 'y': 1})
+        self.assertTrue(type(s1_dictionary), dict)
 
 
 if __name__ == '__main__':
