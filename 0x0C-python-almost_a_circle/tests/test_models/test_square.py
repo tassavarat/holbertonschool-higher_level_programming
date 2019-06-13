@@ -33,12 +33,25 @@ class TestSquare(unittest.TestCase):
     def test_all_neg(self):
         """Passing all neg"""
         with self.assertRaises(ValueError):
+            r1 = Square(-1)
+        with self.assertRaises(ValueError):
             r1 = Square(1, -1, 1, 1)
+        with self.assertRaises(ValueError):
+            r1 = Square(1, 2, -3)
+
+    def test_all_zero(self):
+        """Passing all zero"""
+        with self.assertRaises(ValueError):
+            r1 = Square(0)
 
     def test_string(self):
         """Passing string"""
         with self.assertRaises(TypeError):
             r1 = Square("string")
+        with self.assertRaises(TypeError):
+            r1 = Square(1, "2")
+        with self.assertRaises(TypeError):
+            r1 = Square(1, 2, "3")
 
     def test_no_param(self):
         """Passing nothing"""

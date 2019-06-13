@@ -38,6 +38,10 @@ class TestRectangle(unittest.TestCase):
         """Passing string"""
         with self.assertRaises(TypeError):
             r1 = Rectangle(1, "string")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("string", 1)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, 2, 3, "4")
 
     def test_no_param(self):
         """Passing nothing"""
@@ -78,10 +82,22 @@ class TestRectangle(unittest.TestCase):
         """Neg parameter"""
         with self.assertRaises(ValueError):
             r1 = Rectangle(-1, 2, 1, 1)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 2, 3, -4)
+
+    def test_zero(self):
+        """Neg parameter"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 0)
 
     def test_area(self):
         """Prints out area"""
         r1 = Rectangle(10, 2)
+        self.assertEqual(r1.area(), 20)
 
     def test_display(self):
         """Tests rectangle output"""
