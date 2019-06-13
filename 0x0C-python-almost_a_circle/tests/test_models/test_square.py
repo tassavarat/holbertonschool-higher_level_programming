@@ -180,6 +180,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1_dictionary, {'id': 1, 'x': 2, 'size': 10, 'y': 1})
         self.assertTrue(type(s1_dictionary), dict)
 
+    def test_save_to_file_None2(self):
+        """Testing JSON string rep None"""
+        Square.save_to_file(None)
+        with open("Square.json") as file:
+            self.assertEqual(file.read(), "[]")
+
 
 if __name__ == '__main__':
     unittest.main()
