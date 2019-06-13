@@ -9,6 +9,10 @@ from models.rectangle import Rectangle
 
 class TestBase(unittest.TestCase):
     """Base class test"""
+    def setUp(self):
+        """Resets nb_objects"""
+        Base._Base__nb_objects = 0
+
     def test_id(self):
         """Prints out the id"""
         b1 = Base()
@@ -34,7 +38,7 @@ class TestBase(unittest.TestCase):
     def test_id_None(self):
         """Passing None"""
         b1 = Base(None)
-        self.assertEqual(b1.id, 5)
+        self.assertEqual(b1.id, 1)
 
     def test_id_float(self):
         """Passing float"""
@@ -138,9 +142,56 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(3, 5, 1)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
+        print(r1)
         sys.stdout = sys.__stdout__
-        self.assertEqual(r1, "[Rectangle] (1) 1/0 - 3/5")
-        self.assertEqual(r2, "[Rectangle] (1) 1/0 - 3/5")
+        self.assertEqual(output.getvalue(), "[Rectangle] (1) 1/0 - 3/5\n")
+
+    def test_create2(self):
+        """Testing instance with set attributes 2"""
+        output = StringIO()
+        sys.stdout = output
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        print(r2)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "[Rectangle] (1) 1/0 - 3/5\n")
+
+    def test_create2(self):
+        """Testing instance with set attributes 2"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertFalse(r1 is r2)
+        self.assertFalse(r1 == r2)
+
+    def test_create_TypeError(self):
+        """Testing instance with set attributes TypeError"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        with self.assertRaises(TypeError):
+            r2 = Rectangle.create(None)
+
+    def test_create_TypeError_int(self):
+        """Testing instance with set attributes TypeError int"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        with self.assertRaises(TypeError):
+            r2 = Rectangle.create(1, 2, 3)
+
+    def test_create_TypeError_string(self):
+        """Testing instance with set attributes TypeError string"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        with self.assertRaises(TypeError):
+            r2 = Rectangle.create("string")
+
+    def test_create_TypeError_string(self):
+        """Testing instance with set attributes TypeError string"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        with self.assertRaises(NameError):
+            r2 = Rectangle.create(**betty)
 
 
 if __name__ == '__main__':
