@@ -62,8 +62,7 @@ class Base:
         """Returns: JSON string representation of list_dictionaries"""
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
-        if type(list_dictionaries) is list:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
