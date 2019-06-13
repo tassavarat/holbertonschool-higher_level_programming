@@ -2,6 +2,7 @@
 """Unittest for Base"""
 import unittest
 import sys
+from os import path
 from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
@@ -129,10 +130,10 @@ class TestBase(unittest.TestCase):
 
     def test_save_to_file_square_empty(self):
         """Testing JSON string rep None"""
-        Square.save_to_file([])
-        with open("Square.json") as file:
-            self.assertEqual(
-                    (file.read()), "[]")
+        if path.isfile("Square.json"):
+            Square.save_to_file([])
+            with open("Square.json") as file:
+                self.assertEqual((file.read()), "[]")
 
     def test_save_to_file_square_error(self):
         """Testing JSON string rep None"""
