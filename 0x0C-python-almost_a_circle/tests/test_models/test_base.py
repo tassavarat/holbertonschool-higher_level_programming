@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Unittest for Base"""
+import os
 import unittest
 import sys
 from io import StringIO
@@ -124,12 +125,14 @@ class TestBase(unittest.TestCase):
         Square.save_to_file([])
         with open("Square.json") as file:
             self.assertEqual(file.read(), "[]")
+            os.remove("Square.json")
 
     def test_save_to_file_None(self):
         """Testing JSON string rep None"""
         Square.save_to_file(None)
         with open("Square.json") as file:
             self.assertEqual(file.read(), "[]")
+            os.remove("Square.json")
 
     def test_save_to_file_len_Square(self):
         """Testing JSON string rep len"""
