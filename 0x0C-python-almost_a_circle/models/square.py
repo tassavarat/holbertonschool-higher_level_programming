@@ -36,10 +36,12 @@ class Square(Rectangle):
         if args:
             attrs = ["id", "size", "x", "y"]
             for i, e in enumerate(args):
-                setattr(self, attrs[i], e)
+                if i < len(attrs):
+                    setattr(self, attrs[i], e)
         else:
             for k, v in kwargs.items():
-                setattr(self, k, v)
+                if hasattr(self, k):
+                    setattr(self, k, v)
 
     def to_dictionary(self):
         """Returns: Dictionary representation of Square"""

@@ -65,8 +65,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_unknown(self):
         """unknown parameter"""
-        with self.assertRaises(TypeError):
-            r1 = Rectangle(1, 2, None, 1, 1)
+        with self.assertRaises(NameError):
+            r1 = Rectangle(a)
 
     def test_None(self):
         """None parameter"""
@@ -157,6 +157,25 @@ class TestRectangle(unittest.TestCase):
         print(r1)
         sys.stdout = sys.__stdout__
         assert output.getvalue() == "[Rectangle] (1) 1/3 - 4/2\n"
+
+    def test_to_dict_rep(self):
+        """Test dictionary representation"""
+        r1 = Rectangle(10, 2, 1, 9)
+        r1_dictionary = r1.to_dictionary()
+        self.assertEqual(r1_dictionary, {
+            'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+
+    def test_to_dict_rep_update(self):
+        """Testing dictionary representation update"""
+        output = StringIO()
+        sys.stdout = output
+        r1 = Rectangle(10, 2, 1, 9)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle(1, 1)
+        r2.update(**r1_dictionary)
+        print(r2)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "[Rectangle] (1) 1/9 - 10/2\n")
 
 
 if __name__ == '__main__':
