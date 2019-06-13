@@ -127,13 +127,6 @@ class TestBase(unittest.TestCase):
             self.assertEqual(
                     (file.read()), "[]")
 
-    def test_save_to_file_None(self):
-        """Testing JSON string rep None"""
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json") as file:
-            self.assertEqual(
-                    (file.read()), "[]")
-
     def test_save_to_file_len_Square(self):
         """Testing JSON string rep len"""
         r1 = Square(10, 7, 2, 8)
