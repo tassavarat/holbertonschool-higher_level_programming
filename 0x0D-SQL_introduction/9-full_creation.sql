@@ -13,7 +13,7 @@
 
 CREATE TABLE IF NOT EXISTS second_table (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(256), score INT);
-INSERT INTO `second_table` (`id`, `name`, `score`) VALUE (NULL, "John", "10");
-INSERT INTO `second_table` (`id`, `name`, `score`) VALUE (NULL, "Alex", "3");
-INSERT INTO `second_table` (`id`, `name`, `score`) VALUE (NULL, "Bob", "14");
-INSERT INTO `second_table` (`id`, `name`, `score`) VALUE (NULL, "George", "8");
+INSERT INTO `second_table` (`id`, `name`, `score`) VALUES (NULL, "John", "10");
+INSERT INTO `second_table` (`id`, `name`, `score`) VALUES (NULL, "Alex", "3");
+INSERT INTO `second_table` (`id`, `name`, `score`) VALUES (NULL, "Bob", "14");
+INSERT INTO `second_table` (`id`, `name`, `score`) VALUES (NULL, "George", "8");
