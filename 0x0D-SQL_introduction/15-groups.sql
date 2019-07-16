@@ -6,7 +6,7 @@
 -- Sorted in descending order of number of records
 
 SELECT
-	score, COUNT(*)
+	score, COUNT(*) 'number'
 FROM
 	second_table
 GROUP BY
