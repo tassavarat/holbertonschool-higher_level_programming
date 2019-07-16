@@ -23,7 +23,14 @@
 ---
 
 ### [0. My privileges!](./0-privileges.sql)
+Write a script that lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on your server.
 
+```
+guillaume@ubuntu:~/$ cat 0-privileges.sql | mysql -hlocalhost -uroot -p
+Enter password: 
+ERROR 1141 (42000) at line 4: There is no such grant defined for user 'user_0d_1' on host 'localhost'
+guillaume@ubuntu:~/$ 
+```
 
 ### [1. Root user](./1-create_user.sql)
 
