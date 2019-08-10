@@ -17,6 +17,4 @@ if __name__ == "__main__":
                     WHERE states.name = %s\
                     ORDER by cities.id ASC", (argv[4],))
         table = db.fetchall()
-        length = len(table)
-
-        print(", ".join([row[0] for row in table]))
+        print(", ".join([data[0] for data in table]))
