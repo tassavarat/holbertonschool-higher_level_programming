@@ -14,5 +14,5 @@ if __name__ == "__main__":
                    FROM states\
                    WHERE name = %s", (argv[4],))
         table = db.fetchall()
-        for states in table:
-            print(states)
+        for data in table:
+            print(data)

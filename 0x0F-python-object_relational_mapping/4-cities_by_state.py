@@ -15,5 +15,5 @@ if __name__ == "__main__":
                     ON cities.state_id=states.id\
                     ORDER by cities.id ASC")
         table = db.fetchall()
-        for states in table:
-            print(states)
+        for data in table:
+            print(data)
