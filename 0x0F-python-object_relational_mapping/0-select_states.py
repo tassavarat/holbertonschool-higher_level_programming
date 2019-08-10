@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""l-select_states module
+"""0-select_states module
 Lists all states from the database hbtn_0e_0_usa
 """
 
