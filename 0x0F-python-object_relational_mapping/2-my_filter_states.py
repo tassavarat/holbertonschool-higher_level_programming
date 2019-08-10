@@ -13,7 +13,8 @@ if __name__ == "__main__":
         db.execute("SELECT *\
                    FROM states\
                    WHERE name\
-                   LIKE '{}'".format(argv[4]))
+                   LIKE '{}'\
+                   ORDER BY id ASC".format(argv[4]))
         table = db.fetchall()
         for data in table:
             print(data)
