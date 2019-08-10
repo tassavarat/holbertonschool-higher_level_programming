@@ -11,5 +11,5 @@ if __name__ == "__main__":
                          db=argv[3], port=3306) as db:
         db.execute("SELECT * FROM states ORDER BY id ASC")
         table = db.fetchall()
-        for states in table:
-            print(states)
+        for data in table:
+            print(data)
