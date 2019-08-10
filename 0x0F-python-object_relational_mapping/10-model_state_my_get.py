@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""9-model_state_filter_a
-Lists all State objects that contain the letter a from the database
+"""10-model_state_my_get
+Prints the State object with the name passed as argument from the database
 hbtn_0e_6_usa
 """
 
@@ -16,7 +16,9 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    for data in session.query(State).filter(State.name.like("%a%")).\
-            order_by(State.id).all():
-        print("{}: {}".format(data.id, data.name))
+    data = session.query(State).filter_by(name=argv[4])
+    for data in session.query(State).filter_by(name=argv[4]):
+        print(data.id)
+        exit()
+    print("Not found")
     session.close()
