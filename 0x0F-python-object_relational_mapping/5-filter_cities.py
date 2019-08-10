@@ -19,9 +19,4 @@ if __name__ == "__main__":
         table = db.fetchall()
         length = len(table)
 
-        for data in table:
-            if length != 1:
-                print(str(data).replace("'", "").strip('(').replace(')', ' '),
-                      end='')
-                length = length - 1
-        print(str(data)[2:-3])
+        print(", ".join([row[0] for row in table]))
