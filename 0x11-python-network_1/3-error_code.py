@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Takes URL, sends request to URL, displays body of response decoded in utf-8
 """
 if __name__ == "__main__":
