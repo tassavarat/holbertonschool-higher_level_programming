@@ -4,4 +4,4 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    print(requests.get(argv[1]).status_code)
+    print("Error code:", requests.get(argv[1]).status_code)
