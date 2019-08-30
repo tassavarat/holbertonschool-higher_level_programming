@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""""""
+"""Users github api to list out 10 most recent commits from specified repo
+and user
+"""
 if __name__ == "__main__":
     import requests
     from sys import argv
