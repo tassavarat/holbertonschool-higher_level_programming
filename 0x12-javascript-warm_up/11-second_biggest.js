@@ -9,4 +9,4 @@ for (let i = 2; process.argv[i]; ++i) {
     sl = process.argv[i];
   }
 }
-console.log(parseInt(sl));
+console.log(String(sl));
