@@ -325,9 +325,10 @@ guillaume@ubuntu:~/0x12$ ./13-main.js
 8
 guillaume@ubuntu:~/0x12$ 
 ```
----
 
 [Tip](https://intranet.hbtn.io/rltoken/M3uMoMlngAtefSYF1c7PNQ) from [Jared](https://intranet.hbtn.io/rltoken/gMp6BQ5ebhDV1Wqc6QPC-A)
+---
+
 ### [14. Const or not const](./100-let_me_const.js)
 Write a file that modifies the value of myVar to 333
 
