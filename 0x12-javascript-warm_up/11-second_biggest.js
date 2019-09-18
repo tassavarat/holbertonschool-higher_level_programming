@@ -17,5 +17,5 @@ if (process.argv.length === 2 || process.argv.length === 3) {
       sl = process.argv[i];
     }
   }
-  console.log(sl);
+  console.log(String(sl));
 }
