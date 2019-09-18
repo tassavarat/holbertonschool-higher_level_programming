@@ -44,6 +44,7 @@ guillaume@ubuntu:~/0x12$
 guillaume@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js 
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [1. 3 languages](./1-multi_languages.js)
 Write a script that prints 3 lines:
@@ -61,6 +62,7 @@ Python is cool
 Javascript is amazing
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [2. Arguments](./2-arguments.js)
 Write a script that prints a message depending of the number of arguments passed:
@@ -82,6 +84,7 @@ guillaume@ubuntu:~/0x12$ ./2-arguments.js Holberton School
 Arguments found
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [3. Value of my argument](./3-value_argument.js)
 Write a script that prints the first argument passed to it:
@@ -97,6 +100,7 @@ guillaume@ubuntu:~/0x12$ ./3-value_argument.js Holberton
 Holberton
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [4. Create a sentence](./4-concat.js)
 Write a script that prints two arguments passed to it, in the following format: “ is ”
@@ -113,6 +117,7 @@ guillaume@ubuntu:~/0x12$ ./4-concat.js
 undefined is undefined
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [5. An Integer](./5-to_integer.js)
 Write a script that prints My number: <first argument converted in integer> if the first argument can be converted to an integer:
@@ -135,6 +140,7 @@ guillaume@ubuntu:~/0x12$ ./5-to_integer.js Holberton
 Not a number
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [6. Loop to languages](./6-multi_languages_loop.js)
 Write a script that prints 3 lines: (like 1-multi_languages.js) but by using an array of string and a loop
@@ -155,6 +161,7 @@ Python is cool
 Javascript is amazing
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [7. I love C](./7-multi_c.js)
 Write a script that prints x times “C is fun”
@@ -210,6 +217,7 @@ XXXXXX
 guillaume@ubuntu:~/0x12$ ./8-square.js -3
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [9. Add](./9-add.js)
 Write a script that prints the addition of 2 integers
@@ -231,6 +239,7 @@ guillaume@ubuntu:~/0x12$ ./9-add.js 13 89
 102
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [10. Factorial](./10-factorial.js)
 Write a script that computes and prints a factorial
@@ -253,6 +262,7 @@ guillaume@ubuntu:~/0x12$ ./10-factorial.js 333
 Infinity
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [11. Second biggest!](./11-second_biggest.js)
 Write a script that searches the second biggest integer in the list of arguments.
@@ -272,6 +282,7 @@ guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 4 2 5 3 0 -3
 4
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [12. Object ](./12-object.js)
 Update this script to replace the value 12 with 89:
@@ -296,6 +307,7 @@ guillaume@ubuntu:~/0x12$ ./12-object.js
 { type: 'object', value: 89 }
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 ### [13. Add file](./13-add.js)
 Write a function that returns the addition of 2 integers.
@@ -313,6 +325,7 @@ guillaume@ubuntu:~/0x12$ ./13-main.js
 8
 guillaume@ubuntu:~/0x12$ 
 ```
+---
 
 [Tip](https://intranet.hbtn.io/rltoken/M3uMoMlngAtefSYF1c7PNQ) from [Jared](https://intranet.hbtn.io/rltoken/gMp6BQ5ebhDV1Wqc6QPC-A)
 ### [14. Const or not const](./100-let_me_const.js)
