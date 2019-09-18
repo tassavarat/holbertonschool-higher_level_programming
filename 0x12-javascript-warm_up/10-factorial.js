@@ -1,12 +1,12 @@
 #!/usr/bin/node
 
 /* Computers and prints a factorial */
-let n = parseInt(process.argv[2]);
+function factorial (n) {
+  if (!n) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
 
-for (let i = n - 1; i > 0; --i) {
-  n *= i;
-}
-if (!n) {
-  n = 1;
-}
-console.log(n);
+console.log(factorial(parseInt(process.argv[2])));
