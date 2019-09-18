@@ -6,7 +6,7 @@ if (process.argv.length === 2 || process.argv.length === 3) {
 } else {
   const l = Math.max.apply(null, process.argv.slice(2));
   let sl;
-  if (process.argv[2] !== l) {
+  if (parseInt(process.argv[2]) !== l) {
     sl = parseInt(process.argv[2]);
   } else {
     sl = parseInt(process.argv[3]);
