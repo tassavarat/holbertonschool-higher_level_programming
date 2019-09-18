@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* Computers and prints a factorial */
+/* Computes and prints a factorial */
 function factorial (n) {
   if (!n) {
     return 1;
