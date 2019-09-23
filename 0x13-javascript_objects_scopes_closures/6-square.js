@@ -5,7 +5,7 @@ const Rectangle = require('./5-square');
  * Square class that defines square and inherits Rectangle of 5-square.js
  * Instance method charPrint(c) prints rectangle using 'C', 'X' if undefined
  */
-class Square extends Rectangle {
+module.exports = class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
@@ -19,5 +19,4 @@ class Square extends Rectangle {
       }
     }
   }
-}
-module.exports = Square;
+};

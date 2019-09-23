@@ -7,7 +7,7 @@
  * Creates empty object if either w or h is 0 or negative
  * Has instance method that prints rectangle using 'X'
  */
-class Rectangle {
+module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
@@ -20,5 +20,4 @@ class Rectangle {
       console.log('X'.repeat(this.width));
     }
   }
-}
-module.exports = Rectangle;
+};
