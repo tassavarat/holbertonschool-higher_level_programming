@@ -6,17 +6,12 @@
 const request = require('request');
 
 const obj = {};
-let count = 0;
 
 request.get(process.argv[2], function (err, resp, body) {
   if (err) console.log(err);
   else {
-    for (const i of JSON.parse(body)) {
-      obj[i.userId] = count;
-      count = 0;
-      for (const j of JSON.parse(body)) {
-        if (j.userId === i.userId && j.completed === true) ++count;
-      }
+    for (const o of JSON.parse(body)) {
+      if (o.completed) obj[o.userId] ? obj[o.userId]++ : obj[o.userId] = 1;
     }
     console.log(obj);
   }
